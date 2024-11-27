@@ -2,7 +2,9 @@
 
 # 사용 방법
 이은준의 경우
-C드라이브 위의 Competition_Olympics-Running 폴더에서 conda activate Contest
+C드라이브 위의 Competition_Olympics-Running 폴더에서
+
+conda activate Contest
 
 pip install –r requirements.txt
 
