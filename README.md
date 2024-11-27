@@ -10,6 +10,7 @@ conda activate Contest
 ```
 pip install –r requirements.txt
 ```
+> 다운로드 이미 했으면 안해도 됨
 ```
 python run_log.py --my_ai "rl" --opponent "random"
 ```
