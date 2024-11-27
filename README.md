@@ -4,7 +4,7 @@
 이은준의 경우
 C드라이브 위의 Competition_Olympics-Running 폴더에서
 
-conda activate Contest
+conda activate Contest -> conda의 가상환경 이름이 Contest임
 
 pip install –r requirements.txt
 
