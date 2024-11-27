@@ -11,3 +11,12 @@ python run_log.py --my_ai "rl" --opponent "random"
 > Error 뜰 수 있는데 붉은 색이 아닌 하얀 색 Error이면 상관없이 다음꺼 진행
   
 python evaluation_local.py --my_ai rl --opponent random --episode=100 --map=all
+
+-----------
+원본 깃허브 ![https://github.com/jidiai/Competition_Olympics-Integrated]
+
+---
+# 회의 내용
+## 기계학습
+1. 교수님이 말한 숫자 수정 대안
+2. 전체적인 수정(코드)
