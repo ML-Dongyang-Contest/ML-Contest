@@ -1,4 +1,6 @@
 # ML-Contest
+# 기본 점수 : 
+
 
 # 주최쪽 URL
 > https://www.pygame.org/wiki/Contribute
