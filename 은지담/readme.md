@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/51377651-be4e-42b1-88d2-aabd35b74d9f)# 은지담의 폴더
+# 은지담의 폴더
 
 ### (1) -50 -> 시온이 형이 주신 코드에서 1번 라인 수정
 ```python
