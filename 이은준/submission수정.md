@@ -1,26 +1,42 @@
 """
+
 변경 내용
+
 Epsilon-Greedy 탐험 추가:
 
 RLAgent 클래스에 epsilon 파라미터를 추가.
+
 choose_action 메서드에서 확률적으로 탐험(랜덤 행동 선택)과 착취(최적 행동 선택)를 수행.
+
 코드 통합:
 
 기존 코드 구조를 유지하여 오류 없이 실행 가능.
+
 탐험 확률은 10%로 설정(epsilon=0.1).
+
 my_controller 함수:
 
 Epsilon-Greedy 방식을 활용하여 행동을 선택하고 반환하도록 수정.
+
 """
 """
+
 +-----------+--------+--------------------+
+
 |   Name    | random |         rl         |
+
 +-----------+--------+--------------------+
+
 |   score   |  11.0  |        47.0        |
+
 |    win    |  11.0  |        47.0        |
+
 | avg_steps |   -    | 235.61702127659575 |
+
 +-----------+--------+--------------------+
+
 """
+```
 import os
 import torch
 import torch.nn as nn
@@ -112,3 +128,4 @@ if __name__ == "__main__":
         # 학습
         actor_loss, critic_loss = agent.train(states, actions, rewards)
         print(f"Epoch {epoch + 1}: Actor Loss = {actor_loss:.4f}, Critic Loss = {critic_loss:.4f}")
+```
