@@ -2,7 +2,7 @@
 
 변경 내용
 
-Epsilon-Greedy 탐험 추가:
+Epsilon-Greedy 탐험 추가: -> 탐험적 선택
 
 RLAgent 클래스에 epsilon 파라미터를 추가.
 
