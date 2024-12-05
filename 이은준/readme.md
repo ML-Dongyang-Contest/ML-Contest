@@ -2,7 +2,7 @@
 
 액션 맵 수정 후
 
-object.py 수정
+object.py 수정(벽 부딛치면 각도 변환) - 벽 뚫음
 
 object.py -2 수정 - 오히려 줄음
 
