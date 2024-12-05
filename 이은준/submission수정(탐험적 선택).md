@@ -129,3 +129,7 @@ if __name__ == "__main__":
         actor_loss, critic_loss = agent.train(states, actions, rewards)
         print(f"Epoch {epoch + 1}: Actor Loss = {actor_loss:.4f}, Critic Loss = {critic_loss:.4f}")
 ```
+
+엡실론(탐험 확률을 0.1(10%)에서 0.05(5%)로 바꿔봄
+
+
