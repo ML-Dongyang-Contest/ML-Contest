@@ -1,7 +1,9 @@
 액션 맵을 지담이가 쓴 85.1875 사용하고
+
 ![image](https://github.com/user-attachments/assets/c75b7fc7-b834-46c3-add1-ffaa8c6e4bef)
 
-같게 나왔다.
+같게 나왔다. -> 다른 하이퍼파라미터 조정해도 안바뀜
+
 --------
 
 from itertools import count
