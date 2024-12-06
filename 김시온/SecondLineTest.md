@@ -10,7 +10,7 @@ actions_map = {
     27: [200, -30],   28: [200, -14],   29: [200, -6],  30: [200, -2], 31: [200, 0],    32: [200, 2],  33: [200, 6], 34: [200, 14],   35: [200, 30]
 }
 ```
-<img width="324" alt="스크린샷 2024-12-05 오후 3 09 24" src="https://github.com/user-attachments/assets/6e65e8f6-9fa3-4411-9d52-1c18bed1f8eb">
+<img width="324" alt="스크린샷 2024-12-05 오후 3 09 24" src="https://github.com/user-attachments/assets/6e65e8f6-9fa3-4411-9d52-1c18bed1f8eb">   
    
 2. (기존) 10 -> 6으로 변경
 ```
@@ -21,7 +21,7 @@ actions_map = {
     27: [200, -30],   28: [200, -14],   29: [200, -6],  30: [200, -2], 31: [200, 0],    32: [200, 2],  33: [200, 6], 34: [200, 14],   35: [200, 30]
 }
 ```
-<img width="324" alt="스크린샷 2024-12-06 오후 3 50 42" src="https://github.com/user-attachments/assets/d375dd8a-c047-4a61-837f-e63e6bf415c3">
+<img width="324" alt="스크린샷 2024-12-06 오후 3 50 42" src="https://github.com/user-attachments/assets/d375dd8a-c047-4a61-837f-e63e6bf415c3">   
    
 3. (기존) 10 -> 7로 변경
 ```
@@ -32,7 +32,7 @@ actions_map = {
     27: [200, -30],   28: [200, -14],   29: [200, -6],  30: [200, -2], 31: [200, 0],    32: [200, 2],  33: [200, 6], 34: [200, 14],   35: [200, 30]
 }
 ```
-<img width="324" alt="스크린샷 2024-12-06 오후 4 24 46" src="https://github.com/user-attachments/assets/2d3be261-837d-4270-9c68-8104000de59e">
+<img width="324" alt="스크린샷 2024-12-06 오후 4 24 46" src="https://github.com/user-attachments/assets/2d3be261-837d-4270-9c68-8104000de59e">   
    
 4. (기존) 10 -> 8로 변경
 ```
@@ -43,7 +43,7 @@ actions_map = {
     27: [200, -30],   28: [200, -14],   29: [200, -6],  30: [200, -2], 31: [200, 0],    32: [200, 2],  33: [200, 6], 34: [200, 14],   35: [200, 30]
 }
 ```
-<img width="324" alt="스크린샷 2024-12-05 오후 3 27 10" src="https://github.com/user-attachments/assets/ddeac58c-06c1-48a9-8720-dcba87c22568">
+<img width="324" alt="스크린샷 2024-12-05 오후 3 27 10" src="https://github.com/user-attachments/assets/ddeac58c-06c1-48a9-8720-dcba87c22568">   
    
 5. (기존) 10 -> 9로 변경
 ```
@@ -54,7 +54,7 @@ actions_map = {
     27: [200, -30],   28: [200, -14],   29: [200, -6],  30: [200, -2], 31: [200, 0],    32: [200, 2],  33: [200, 6], 34: [200, 14],   35: [200, 30]
 }
 ```
-<img width="324" alt="스크린샷 2024-12-06 오후 4 44 38" src="https://github.com/user-attachments/assets/c4100a1b-9144-44dd-a272-74cfa0e9a554">
+<img width="324" alt="스크린샷 2024-12-06 오후 4 44 38" src="https://github.com/user-attachments/assets/c4100a1b-9144-44dd-a272-74cfa0e9a554">   
    
 6. (기존) 10 -> 11로 변경   
 ```
@@ -65,7 +65,7 @@ actions_map = {
     27: [200, -30],   28: [200, -14],   29: [200, -6],  30: [200, -2], 31: [200, 0],    32: [200, 2],  33: [200, 6], 34: [200, 14],   35: [200, 30]
 }
 ```
-<img width="324" alt="스크린샷 2024-12-05 오후 1 50 37" src="https://github.com/user-attachments/assets/d39e905f-bb58-48da-aae9-5ee074a62758">
+<img width="324" alt="스크린샷 2024-12-05 오후 1 50 37" src="https://github.com/user-attachments/assets/d39e905f-bb58-48da-aae9-5ee074a62758">   
 
 7. (기존) 10 -> 12로 변경
 ```
@@ -76,7 +76,7 @@ actions_map = {
     27: [200, -30],   28: [200, -14],   29: [200, -6],  30: [200, -2], 31: [200, 0],    32: [200, 2],  33: [200, 6], 34: [200, 14],   35: [200, 30]
 }
 ```
-<img width="324" alt="스크린샷 2024-12-05 오후 2 27 36" src="https://github.com/user-attachments/assets/1d941ea3-0a39-40b3-9e3a-396ba9f65104">
+<img width="324" alt="스크린샷 2024-12-05 오후 2 27 36" src="https://github.com/user-attachments/assets/1d941ea3-0a39-40b3-9e3a-396ba9f65104">   
 
 8. (기존) 10 -> 13로 변경
 ```
@@ -87,7 +87,7 @@ actions_map = {
     27: [200, -30],   28: [200, -14],   29: [200, -6],  30: [200, -2], 31: [200, 0],    32: [200, 2],  33: [200, 6], 34: [200, 14],   35: [200, 30]
 }
 ```
-<img width="324" alt="스크린샷 2024-12-06 오후 5 06 05" src="https://github.com/user-attachments/assets/f88f2749-bfd2-4deb-9fe5-5ba453ce8da1">
+<img width="324" alt="스크린샷 2024-12-06 오후 5 06 05" src="https://github.com/user-attachments/assets/f88f2749-bfd2-4deb-9fe5-5ba453ce8da1">   
    
 9. (기존) 10 -> 14로 변경
 ```
@@ -98,7 +98,7 @@ actions_map = {
     27: [200, -30],   28: [200, -14],   29: [200, -6],  30: [200, -2], 31: [200, 0],    32: [200, 2],  33: [200, 6], 34: [200, 14],   35: [200, 30]
 }
 ```
-<img width="324" alt="스크린샷 2024-12-06 오후 5 31 16" src="https://github.com/user-attachments/assets/af7121b3-3438-478e-9131-87835b87c717">
+<img width="324" alt="스크린샷 2024-12-06 오후 5 31 16" src="https://github.com/user-attachments/assets/af7121b3-3438-478e-9131-87835b87c717">   
    
 10. (기존) 10 -> 15로 변경
 ```
