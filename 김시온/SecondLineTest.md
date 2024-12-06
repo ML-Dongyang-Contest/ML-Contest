@@ -67,7 +67,8 @@ actions_map = {
     27: [200, -30],   28: [200, -14],   29: [200, -6],  30: [200, -2], 31: [200, 0],    32: [200, 2],  33: [200, 6], 34: [200, 14],   35: [200, 30]
 }
 ```
-<img width="324" alt="스크린샷 2024-12-06 오후 4 24 46" src="https://github.com/user-attachments/assets/2d3be261-837d-4270-9c68-8104000de59e">   
+<img width="324" alt="스크린샷 2024-12-06 오후 4 24 46" src="https://github.com/user-attachments/assets/2d3be261-837d-4270-9c68-8104000de59e">
+
 **(기존) 10 -> 8로 변경**
 ```
 actions_map = {
