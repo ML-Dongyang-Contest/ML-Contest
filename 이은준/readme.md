@@ -13,12 +13,18 @@
 
 ---
 
-olympics/object.py 수정(벽 부딛치면 각도 변환) - 벽 뚫음
+olympics/object.py 수정(벽 부딛치면 각도 변환)
   - 현재 상태에서 가장 최적의 행동을 계산하는 함수 사용
+
+> 벽 뚫음
+
 ---
 
-olympics/object.py -2 수정 - 오히려 줄음
+olympics/object.py -2 수정
  - 벽 뚫는 메소드 변경
+
+> 오히려 줄음
+
 ---
 
 agents/rl/submission 수정( Dana-Q 탐색 제어를 넣기 )
