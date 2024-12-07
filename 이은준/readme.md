@@ -56,7 +56,7 @@ olympics/core.py 수정( 벽에 3번 부딛치면 180도 회전 )
 
 ----
 
-rl_trainer/algo/ppo.py 수정( 하이퍼 파라미터값 조정  ) - 같음
+rl_trainer/algo/ppo.py 수정( 하이퍼 파라미터값 조정 )
 - clip_param:
   - PPO 알고리즘에서 정책 업데이트를 제한하기 위해 사용되는 클리핑 파라미터.
   - 기존 정책과 새 정책의 차이를 일정 범위 내로 제한해 학습 안정성을 높이는 데 사용
@@ -98,3 +98,24 @@ submission의 벽 3초동안 부딛칠 때 방향 180도 변경
 > 오류 떠서 포기
 
 ---
+
+rl_trainer/algo/ppo.py 수정( 손실 함수 재지정 )
+- update 함수의 action_loss를 기존의 최소 클리핑 방식에서 KL-Divergence 를 추가
+```
+# 변경 전
+ratio = (action_prob / old_action_log_prob[index])
+surr1 = ratio * advantage
+surr2 = torch.clamp(ratio, 1 - self.clip_param, 1 + self.clip_param) * advantage
+
+action_loss = -torch.min(surr1, surr2).mean()  # MAX->MIN desent
+```
+
+```
+# 변경 후
+ratio = (action_prob / old_action_log_prob[index])
+surr1 = ratio * advantage
+surr2 = torch.clamp(ratio, 1 - self.clip_param, 1 + self.clip_param) * advantage
+
+kl_div = F.kl_div(action_prob.log(), old_action_log_prob, reduction='batchmean')
+action_loss = -torch.min(surr1, surr2).mean() + 0.01 * kl_div                       # 손실함수 변경
+```
