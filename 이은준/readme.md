@@ -77,9 +77,9 @@ rl_trainer/algo/ppo.py 수정( 하이퍼 파라미터값 조정  ) - 같음
   - 환경에서의 상태(state)를 표현하는 차원의 크기
   - 이 값이 625라면, 총 625개의 상태로 구성된 환경에서 학습한다는 뜻 
 
-clip_param이 0.7, ppo_update_time가 30, batch_size가 16, lr가 0.001 일 경우 → 같음
-clip_param이 0.1, ppo_update_time가 50, batch_size가 8, lr가 0.01일 경우 → 같음
-clip_param이 0.3, ppo_update_time가 70, batch_size가 8, lr가 0.0001일 경우 → 같음
++ clip_param이 0.7, ppo_update_time가 30, batch_size가 16, lr가 0.001 일 경우 → 같음
++ clip_param이 0.1, ppo_update_time가 50, batch_size가 8, lr가 0.01일 경우 → 같음
++ clip_param이 0.3, ppo_update_time가 70, batch_size가 8, lr가 0.0001일 경우 → 같음
 
 ---
 
