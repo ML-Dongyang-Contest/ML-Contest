@@ -150,6 +150,7 @@ action_loss = -torch.min(surr1, surr2).mean() + 0.01 * kl_div                   
 
 ---
 
+`2024-12-07`
 # 자동 저장 save() 호출
 ```
 def update(self, i_ep):
