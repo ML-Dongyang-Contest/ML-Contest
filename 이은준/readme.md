@@ -153,6 +153,18 @@ action_loss = -torch.min(surr1, surr2).mean() + 0.01 * kl_div                   
 `2024-12-07`
 # 자동 저장 save() 호출
 ```
+#### ppo 클래스 외부에 생성
+def get_next_run_dir(base_path):
+    if not os.path.exists(base_path):
+        os.makedirs(base_path)
+    existing_runs = [d for d in os.listdir(base_path) if d.startswith("run") and d[3:].isdigit()]
+    if existing_runs:
+        next_run_num = max([int(d[3:]) for d in existing_runs]) + 1
+    else:
+        next_run_num = 6
+    return os.path.join(base_path, f"run{next_run_num}")
+#####
+
 def update(self, i_ep):
     self.clear_buffer()
     # 자동 저장 호출
