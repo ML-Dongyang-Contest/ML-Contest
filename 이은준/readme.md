@@ -120,3 +120,11 @@ surr2 = torch.clamp(ratio, 1 - self.clip_param, 1 + self.clip_param) * advantage
 kl_div = F.kl_div(action_prob.log(), old_action_log_prob, reduction='batchmean')
 action_loss = -torch.min(surr1, surr2).mean() + 0.01 * kl_div                       # 손실함수 변경
 ```
+
+----
+
+# def save() 함수가 호출이 안 되는 것을 발견
+
+실행 중에 자동으로 save()함수가 호출되지 않은 것을 발견 → 로직을 고쳐도 기존의 학습한 내용가지고만 감
+
+로직을 고칠 필요가 없음
