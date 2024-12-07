@@ -164,7 +164,7 @@ actions_map = {
     27: [200, -30], 28: [200, -14], 29: [200, -6], 30: [200, -2], 31: [200, 0], 32: [200, 2], 33: [200, 6], 34: [200, 14], 35: [200, 30]
 }
 ```
-![image](https://github.com/user-attachments/assets/346c184b-268a-47d3-932e-464759854597)
+![image](https://github.com/user-attachments/assets/fdc83ce9-34cb-4b55-aa18-1707b7b2d56b)
 ---
 ### (15) 3번라인 85
 ```python
