@@ -164,7 +164,8 @@ def get_next_run_dir(base_path):
         next_run_num = 6
     return os.path.join(base_path, f"run{next_run_num}")
 #####
-
+```
+```
 def update(self, i_ep):
     self.clear_buffer()
     # 자동 저장 호출
