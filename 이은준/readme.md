@@ -51,6 +51,35 @@ olympics/core.py 수정( 벽에 3번 부딛치면 180도 회전 )
 ----
 
 rl_trainer/algo/ppo.py 수정( 하이퍼 파라미터값 조정  ) - 같음
+- clip_param:
+  - PPO 알고리즘에서 정책 업데이트를 제한하기 위해 사용되는 클리핑 파라미터.
+  - 기존 정책과 새 정책의 차이를 일정 범위 내로 제한해 학습 안정성을 높이는 데 사용
+- max_grad_norm:
+  - 그래디언트 클리핑에 사용되는 최대 값 그래디언트 폭발 문제를 방지하기 위해 설정
+- ppo_update_time:
+  - PPO 알고리즘에서 정책을 몇 번 업데이트할지 설정하는 값
+  -한 번의 학습 반복(iteration)에서 정책을 얼마나 자주 업데이트할지 결정
+- buffer_capacity:
+  - Replay Buffer의 최대 용량
+  - 강화학습에서 수집된 경험 데이터를 저장하는 공간 크기를 의미
+- batch_size:
+  - 학습에 사용할 미니배치 크기
+  - 네트워크 업데이트 시, 한 번에 처리할 데이터의 수를 의미
+- gamma:
+  - 할인율로, 미래 보상에 대한 현재 가치의 중요도를 조정함
+  - 0.99라면 미래 보상을 많이 반영하는 설정임
+- lr:
+  - 학습률(Learning Rate)로, 네트워크의 가중치를 업데이트할 때 변화 크기를 결정
+- action_space:
+  - 에이전트가 선택할 수 있는 행동(action)의 수
+  - 여기서는 36개의 행동 공간이 설정되어 있지만, 주석 처리된 action_space = 3은 특정 상황에서 행동 공간이 더 적을 수도 있음을 암시
+- state_space:
+  - 환경에서의 상태(state)를 표현하는 차원의 크기
+  - 이 값이 625라면, 총 625개의 상태로 구성된 환경에서 학습한다는 뜻 
+
+clip_param이 0.7, ppo_update_time가 30, batch_size가 16, lr가 0.001 일 경우 → 같음
+clip_param이 0.1, ppo_update_time가 50, batch_size가 8, lr가 0.01일 경우 → 같음
+clip_param이 0.3, ppo_update_time가 70, batch_size가 8, lr가 0.0001일 경우 → 같음
 
 ---
 
