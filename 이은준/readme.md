@@ -9,25 +9,26 @@
 
 ---
 
-액션 맵 수정 후
+
+### 액션 맵 수정 후
 
 ---
 
-olympics/object.py 수정(벽 부딛치면 각도 변환)
+### olympics/object.py 수정(벽 부딛치면 각도 변환)
   - 현재 상태에서 가장 최적의 행동을 계산하는 함수 사용
 
 > 벽 뚫음
 
 ---
 
-olympics/object.py -2 수정
+### olympics/object.py -2 수정
  - 벽 뚫는 메소드 변경
 
 > 오히려 줄음
 
 ---
 
-agents/rl/submission 수정( Dana-Q 탐색 제어를 넣기 )
+### agents/rl/submission 수정( Dana-Q 탐색 제어를 넣기 )
 - DynaQAgent를 import
 - Dyna-Q 에이전트가 학습할 환경을 정의
 - submission.py에서 Dyna-Q 에이전트를 초기화
@@ -36,7 +37,7 @@ agents/rl/submission 수정( Dana-Q 탐색 제어를 넣기 )
 
 > 결과값이 같게 나옴
 ---
-agents/rl/submission 수정( 탐험적 선택 활용 )
+### agents/rl/submission 수정( 탐험적 선택 활용 )
 - 탐험 확률 초기화 (epsilon=0.1)
 - choose_action 함수로 epsilon값에 따른 랜덤or최적을 선택
 
@@ -44,7 +45,7 @@ agents/rl/submission 수정( 탐험적 선택 활용 )
 
 ---
 
-olympics/core.py 수정( 벽에 3번 부딛치면 180도 회전 )
+### olympics/core.py 수정( 벽에 3번 부딛치면 180도 회전 )
 - get_join_actions 메서드:
   - 상태에 따라 각 에이전트의 행동을 생성.
   - rl_agent를 통해 강화학습 에이전트의 행동을 선택.
@@ -56,7 +57,7 @@ olympics/core.py 수정( 벽에 3번 부딛치면 180도 회전 )
 
 ----
 
-rl_trainer/algo/ppo.py 수정( 하이퍼 파라미터값 조정 )
+### rl_trainer/algo/ppo.py 수정( 하이퍼 파라미터값 조정 )
 - clip_param:
   - PPO 알고리즘에서 정책 업데이트를 제한하기 위해 사용되는 클리핑 파라미터.
   - 기존 정책과 새 정책의 차이를 일정 범위 내로 제한해 학습 안정성을 높이는 데 사용
@@ -89,7 +90,7 @@ rl_trainer/algo/ppo.py 수정( 하이퍼 파라미터값 조정 )
 
 ---
 
-submission의 벽 3초동안 부딛칠 때 방향 180도 변경
+### submission의 벽 3초동안 부딛칠 때 방향 180도 변경
 - collision_time_tracker 변수를 추가하여 벽과 충돌한 시간을 기록.
 - 2초 후 속도 반전: 충돌이 2초 이상 유지되면, 속도를 반전
 - collision_time_tracker를 초기화하는 메서드를 추가하여 필요시 타이머를 리셋할 수 있도록 함
@@ -99,7 +100,7 @@ submission의 벽 3초동안 부딛칠 때 방향 180도 변경
 
 ---
 
-rl_trainer/algo/ppo.py 수정( 손실 함수 재지정 )
+### rl_trainer/algo/ppo.py 수정( 손실 함수 재지정 )
 - update 함수의 action_loss를 기존의 최소 클리핑 방식에서 KL-Divergence 를 추가
 ```
 # 변경 전
