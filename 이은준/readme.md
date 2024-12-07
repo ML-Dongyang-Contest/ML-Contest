@@ -21,8 +21,14 @@ object.py -2 수정 - 오히려 줄음
 
 ---
 
-submission 수정(탐험적 선택) - 같음
+submission 수정( Dana-Q 탐색 제어를 넣고, 탐험적 선택)
+- DynaQAgent를 import
+- Dyna-Q 에이전트가 학습할 환경을 정의
+- submission.py에서 Dyna-Q 에이전트를 초기화
+- Dyna-Q 에이전트를 학습시키는 루프를 작성
+- 에이전트 성능을 평가
 
+> 결과값이 같게 나옴
 ---
 
 core.py 수정( 벽에 3번 부딛치면 180도 회전 )
