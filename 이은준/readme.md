@@ -147,3 +147,24 @@ action_loss = -torch.min(surr1, surr2).mean() + 0.01 * kl_div                   
 실행 중에 자동으로 save()함수가 호출되지 않은 것을 발견 → 로직을 고쳐도 기존의 학습한 내용가지고만 감
 
 로직을 고칠 필요가 없음
+
+---
+
+# 자동 저장 save() 호출
+```
+def update(self, i_ep):
+    self.clear_buffer()
+    # 자동 저장 호출
+    save_path = "models/olympics-running"
+    self.save(save_path=save_path, episode=i_ep)
+
+def save(self, save_path, episode):
+    run_dir = get_next_run_dir(save_path)  # 저장 디렉토리 자동 생성
+    os.makedirs(run_dir, exist_ok=True)   # 디렉토리 생성
+    model_actor_path = os.path.join(run_dir, f"actor_{episode}.pth")
+    model_critic_path = os.path.join(run_dir, f"critic_{episode}.pth")
+    torch.save(self.actor_net.state_dict(), model_actor_path)
+    torch.save(self.critic_net.state_dict(), model_critic_path)
+    print(f"Models saved in {run_dir}")
+```
+> 저장이 안됨
