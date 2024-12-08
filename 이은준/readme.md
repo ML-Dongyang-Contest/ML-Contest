@@ -190,7 +190,7 @@ def save(self, save_path, episode):
 ```
 if __name__ == '__main__':
     args = parser.parse_args()
-    args.load_model = True
+    args.load_model = True    # 이부분이 원래 주석처리되있었음
     #args.load_run = 3
     #args.map = 3
     #args.load_episode= 900
