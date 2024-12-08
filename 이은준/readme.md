@@ -197,13 +197,18 @@ if __name__ == '__main__':
 # 애초에 오류가 있었음
 `python run_log.py --my_ai "rl" --opponent "random"` 를 사용하면
 ![image](https://github.com/user-attachments/assets/9ca7543d-95f9-4204-adb6-50395c2dd17d)
+
 오류가 떠서 
+
 범위 벗어난 값 처리를 하기 위해 `action[1]`을 클리핑하는 방식을 사용
 ```
 action[1] = np.clip(action[1], self.action_theta[0], self.action_theta[1])
 ```
 
 오류는 안뜨지만 처음보는 광경을 봄
+
 ![image](https://github.com/user-attachments/assets/b607de19-459b-4a89-910d-4a8351877b83)
+
 step를 한번 움직일 때 마다 저렇게 print됨
+
 - 함수 호출을 따라가봤는데 무슨 소리인지 모르겠음
