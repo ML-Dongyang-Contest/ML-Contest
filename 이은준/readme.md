@@ -206,3 +206,4 @@ action[1] = np.clip(action[1], self.action_theta[0], self.action_theta[1])
 오류는 안뜨지만 처음보는 광경을 봄
 ![image](https://github.com/user-attachments/assets/b607de19-459b-4a89-910d-4a8351877b83)
 step를 한번 움직일 때 마다 저렇게 print됨
+- 함수 호출을 따라가봤는데 무슨 소리인지 모르겠음
