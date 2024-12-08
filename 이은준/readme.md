@@ -182,3 +182,16 @@ def save(self, save_path, episode):
     print(f"Models saved in {run_dir}")
 ```
 > 저장이 안됨
+
+---
+
+# rl_trainner/main.py의 load_model 을 True로 해 이미 학습한 파일들 불러오기
+
+```
+if __name__ == '__main__':
+    args = parser.parse_args()
+    args.load_model = True
+    #args.load_run = 3
+    #args.map = 3
+    #args.load_episode= 900
+    main(args)
