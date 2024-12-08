@@ -195,7 +195,11 @@ if __name__ == '__main__':
 
 `2024-12-09`
 # 애초에 오류가 있었음
-`python run_log.py --my_ai "rl" --opponent "random"` 를 사용하면
+```
+python run_log.py --my_ai "rl" --opponent "random"
+```
+를 사용하면
+
 ![image](https://github.com/user-attachments/assets/9ca7543d-95f9-4204-adb6-50395c2dd17d)
 
 오류가 떠서 
