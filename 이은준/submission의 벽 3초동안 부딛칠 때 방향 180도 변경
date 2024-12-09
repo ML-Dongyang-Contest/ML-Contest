@@ -1,0 +1,124 @@
+import os
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+import time
+from torch.distributions import Categorical
+import numpy as np
+
+device = 'cpu'
+
+# Actor 클래스 정의
+class Actor(nn.Module):
+    def __init__(self, state_space, action_space, hidden_size=64, cnn=False):
+        super(Actor, self).__init__()
+        self.is_cnn = cnn
+        self.linear_in = nn.Linear(state_space, hidden_size)
+        self.action_head = nn.Linear(hidden_size, action_space)
+
+    def forward(self, x):
+        if self.is_cnn:
+            x = self.encoder(x)
+        x = F.relu(self.linear_in(x))
+        action_prob = F.softmax(self.action_head(x), dim=1)
+        return action_prob
+
+# Critic 클래스 정의 (사용되지 않지만 참고용)
+class Critic(nn.Module):
+    def __init__(self, state_space, hidden_size=64, cnn=False):
+        super(Critic, self).__init__()
+        self.is_cnn = cnn
+        self.linear_in = nn.Linear(state_space, hidden_size)
+        self.state_value = nn.Linear(hidden_size, 1)
+
+    def forward(self, x):
+        if self.is_cnn:
+            x = self.encoder(x)
+        x = F.relu(self.linear_in(x))
+        value = self.state_value(x)
+        return value
+
+# 행동 맵 설정
+actions_map = {key: [0, 10 * key] for key in range(36)}
+
+# RLAgent 클래스 정의
+class RLAgent(object):
+    def __init__(self, obs_dim, act_dim, num_agent):
+        self.obs_dim = obs_dim
+        self.act_dim = act_dim
+        self.num_agent = num_agent
+        self.device = 'cpu'
+        self.actor = Actor(self.obs_dim, self.act_dim).to(self.device)
+
+        # 벽에 부딪힌 시간을 추적하는 변수 추가
+        self.wall_hit_time = None
+
+    def choose_action(self, obs, wall_hit):  # wall_hit 인자를 받도록 수정
+        state = torch.from_numpy(obs).float().unsqueeze(0).to(self.device)
+        with torch.no_grad():
+            action_prob = self.actor(state).to(self.device)
+
+        action = torch.argmax(action_prob)
+
+        # 벽에 2초 이상 부딪혔다면 180도 회전
+        if wall_hit:
+            if self.wall_hit_time is None:
+                self.wall_hit_time = time.time()  # 충돌 시간을 기록
+            else:
+                if time.time() - self.wall_hit_time >= 2:  # 2초 이상 부딪히면
+                    action = (action + 18) % 36  # 180도 회전 (36개 행동 기준)
+        else:
+            self.wall_hit_time = None  # 벽에 부딪히지 않으면 타이머 초기화
+
+        return action.item()
+
+    def load_model(self, filename):
+        self.actor.load_state_dict(torch.load(filename))
+
+# 벽에 부딪혔는지 여부를 감지하는 함수 (예시)
+def detect_wall_collision(observation):
+    # observation에서 벽과의 충돌 여부를 확인하는 함수
+    # 실제 환경에 맞게 수정되어야 합니다.
+    if "wall_collision" in observation:
+        return observation["wall_collision"]
+    return False
+
+# controller 함수
+def my_controller(observation_list, action_space_list, is_act_continuous):
+    obs_dim = 25 * 25
+    obs = observation_list['obs'].copy().flatten()
+
+    # 벽에 부딪혔는지 확인
+    wall_hit = detect_wall_collision(observation_list)
+    
+    # 벽에 부딪혔는지 여부를 넘겨주도록 수정
+    actions_raw = agent.choose_action(obs, wall_hit)  # 여기서 wall_hit 값을 전달
+    actions = actions_map[actions_raw]
+    wrapped_actions = [[actions[0]], [actions[1]]]
+    return wrapped_actions
+
+# get_join_actions 함수 수정
+def get_join_actions(state, algo_list):
+    actions_raw = []
+    for agent in algo_list:
+        # 상태 정보에서 벽 충돌 여부를 추출하는 로직 추가
+        wall_hit = detect_wall_collision(state)  # 벽에 부딪혔는지 확인하는 함수 사용
+        action = agent.choose_action(state, wall_hit)  # wall_hit을 함께 전달
+        actions_raw.append(action)
+    return actions_raw
+
+# 에이전트 객체 생성 및 모델 로딩
+agent = RLAgent(25*25, 36, 1)
+actor_net = os.path.dirname(os.path.abspath(__file__)) + "/actor_1500.pth"
+agent.load_model(actor_net)
+
+# game 실행 코드 예시
+def run_game(game, algo_list, episode, shuffle_map, map_num, verbose=False):
+    for ep in range(episode):
+        state = game.reset(map_num)
+        while not game.is_done():
+            joint_action = get_join_actions(state, algo_list)  # get_join_actions 호출
+            next_state, reward, done, info = game.step(joint_action)
+            state = next_state
+            if verbose:
+                print(f"Episode {ep}, Step {game.get_step()}")
