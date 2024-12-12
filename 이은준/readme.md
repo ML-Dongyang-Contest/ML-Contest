@@ -39,7 +39,7 @@
 - Dyna-Q 에이전트를 학습시키는 루프를 작성
 - 에이전트 성능을 평가
 
-> 결과값이 같게 나옴
+
 ---
 
 `2024-12-4`
@@ -60,7 +60,7 @@
   - 게임 환경을 실행하고 에피소드 보상, 승리 수, 스텝 수를 기록.
   - 환경과 에이전트 목록을 입력받아 테스트를 진행.
 
-> 알고리즘 확인밖에 안됨
+
 
 ----
 
@@ -92,9 +92,9 @@
   - 환경에서의 상태(state)를 표현하는 차원의 크기
   - 이 값이 625라면, 총 625개의 상태로 구성된 환경에서 학습한다는 뜻 
 
-+ clip_param이 0.7, ppo_update_time가 30, batch_size가 16, lr가 0.001 일 경우 → 같음
-+ clip_param이 0.1, ppo_update_time가 50, batch_size가 8, lr가 0.01일 경우 → 같음
-+ clip_param이 0.3, ppo_update_time가 70, batch_size가 8, lr가 0.0001일 경우 → 같음
++ clip_param이 0.7, ppo_update_time가 30, batch_size가 16, lr가 0.001 일 경우 
++ clip_param이 0.1, ppo_update_time가 50, batch_size가 8, lr가 0.01일 경우 
++ clip_param이 0.3, ppo_update_time가 70, batch_size가 8, lr가 0.0001일 경우 
 
 ---
 
@@ -105,7 +105,7 @@
 - collision_time_tracker를 초기화하는 메서드를 추가하여 필요시 타이머를 리셋할 수 있도록 함
 - collision_response 메서드 내에서 벽 충돌 후 2초가 경과했을 때 속도를 반전시키는 로직을 추가
 
-> 오류 떠서 포기
+
 
 ---
 
@@ -173,7 +173,7 @@ def save(self, save_path, episode):
     torch.save(self.critic_net.state_dict(), model_critic_path)
     print(f"Models saved in {run_dir}")
 ```
-> 저장이 안됨
+
 
 ---
 
