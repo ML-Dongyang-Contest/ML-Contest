@@ -23,7 +23,7 @@ actions_map = {
 ```
 ![image](https://github.com/user-attachments/assets/b13fabec-a332-4fac-ab12-6dba7eae7762)
 ---
-### (0) 1번라인 -28
+### (1) 1번라인 -28
 ```python
 actions_map = {
     0: [-35, -28],  1: [-35, -14],  2: [-35, -6],  3: [-35, -2],   4: [-35, 0], 5: [-35, 2], 6: [-35, 6],  7: [-35, 14], 8: [-35, 30], 
